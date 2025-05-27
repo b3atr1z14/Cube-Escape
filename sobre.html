@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Jogo - Cube Escape</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #0d0d0d;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 3px solid #6a0505;
+        }
+
+        header h1 {
+            font-family: 'Creepster', cursive;
+            color: #d11e1e;
+            font-size: 3.5em;
+            margin: 0;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #ffc107;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #6a0505;
+            color: #ffffff;
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        main h2 {
+            font-family: 'Creepster', cursive;
+            color: #d11e1e;
+            font-size: 2.8em;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            margin-top: 60px; /* Consistência com outras páginas */
+        }
+
+        .about-section {
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            margin-top: 40px;
+            border: 2px solid #6a0505;
+            padding: 40px;
+            margin-bottom: 50px;
+        }
+
+        .about-section h2 {
+            margin-top: 0;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .info-list li {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid #ffc107;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adicionado transição */
+        }
+
+        .info-list li:hover {
+            transform: translateX(5px); /* Desliza um pouco para a direita */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .info-list li i {
+            color: #d11e1e;
+            font-size: 1.3em;
+        }
+
+        .info-list li strong {
+            color: #ffc107;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #c0c0c0;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para a nova seção de Chamada para Ação */
+        .call-to-action {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #222;
+            border-radius: 10px;
+            margin: 50px auto;
+            max-width: 800px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            border: 2px solid #ffc107;
+        }
+
+        .call-to-action h2 {
+            color: #d11e1e;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-family: 'Creepster', cursive;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .call-to-action .button {
+            display: inline-block;
+            background-color: #d11e1e;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .call-to-action .button:hover {
+            background-color: #b31717;
+            transform: translateY(-3px);
+        }
+
+        /* Estilos para a seção "Sobre o Desenvolvedor" */
+        .developer-info {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #222;
+            border-radius: 10px;
+            margin: 60px auto;
+            max-width: 800px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            border: 2px solid #6a0505;
+        }
+
+        .developer-info h2 {
+            color: #d11e1e;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-family: 'Creepster', cursive;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .developer-info p {
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .developer-info a {
+            color: #ffc107;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .developer-info a:hover {
+            color: #d11e1e;
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #0d0d0d;
+            color: #888;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            border-top: 3px solid #6a0505;
+        }
+
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                padding: 10px;
+            }
+
+            main {
+                padding: 20px 15px;
+                margin-top: 20px;
+            }
+
+            main h2 {
+                font-size: 2.2em;
+            }
+
+            .info-list {
+                grid-template-columns: 1fr;
+            }
+
+            .call-to-action h2 {
+                font-size: 2em;
+            }
+
+            .developer-info h2 {
+                font-size: 1.8em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            main h2 {
+                font-size: 1.8em;
+            }
+
+            .call-to-action h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cube Escape</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="personagem.html">Personagem</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <h2>Sobre o Jogo: O Universo de Cube Escape</h2>
+            <ul class="info-list">
+                <li><i class="fas fa-calendar-alt"></i> <strong>Ano de Lançamento (primeiro jogo):</strong> 2015 (Cube Escape: Seasons)</li>
+                <li><i class="fas fa-code-branch"></i> <strong>Desenvolvedora:</strong> Rusty Lake - Mestres do Mistério!</li>
+                <li><i class="fas fa-gamepad"></i> <strong>Gênero:</strong> Point-and-click, Puzzle (quebra-cabeças complexos), Horror Psicológico, Mistério</li>
+                <li><i class="fas fa-desktop"></i> <strong>Plataformas:</strong> Principalmente Navegador (Flash - nostálgico!), iOS, Android, PC (Steam)</li>
+            </ul>
+            <p>A série Cube Escape, desenvolvida pela aclamada Rusty Lake, é a espinha dorsal de um universo vasto, enigmático e perturbadoramente cativante. Lançada em 2015 com Cube Escape: Seasons, os jogos rapidamente conquistaram uma legião de fãs dedicados por sua atmosfera sombria, quebra-cabeças engenhosos e uma narrativa profunda que se desdobra de forma hipnotizante a cada novo título.</p>
+            <p>Com um estilo de arte peculiar e minimalista, mas inconfundivelmente marcante, e uma trilha sonora inquietante, cada elemento contribui para uma imersão que vai muito além de um simples "clique". A complexidade dos puzzles e a interconexão da história entre os diferentes títulos elevam a série a um patamar único no gênero de mistério e horror psicológico.</p>
+            <p>Uma curiosidade fascinante é a forma como cada Cube Escape funciona como um fragmento de memória ou um pedaço de um quebra-cabeça maior, muitas vezes ligado à vida do detetive Dale Vandermeer ou a outros personagens da misteriosa família Vanderboom, figuras centrais no universo Rusty Lake. A série é célebre por suas referências artísticas, conceitos psicológicos profundos e um simbolismo denso que mantém os fãs teorizando e explorando seus mistérios por anos. Prepare-se para questionar tudo o que você sabe!</p>
+        </section>
+
+        <section class="call-to-action">
+            <h2>Pronto para desvendar os segredos de Cube Escape?</h2>
+            <a href="https://www.rustylake.com/games/" target="_blank" class="button">Comece a Jogar Agora!</a>
+        </section>
+
+        <section class="developer-info">
+            <h2>Conheça a Criadora Desta Experiência</h2>
+            <p>Esta página foi desenvolvida com dedicação e paixão por Beatriz Carvalho Silva. Meu objetivo é compartilhar o fascínio pelo universo de Cube Escape e Rusty Lake, proporcionando aos fãs (e futuros fãs!) um ponto de partida para essa jornada intrigante.</p>
+            <p>Para mais informações ou para entrar em contato, visite meu GitHub: <a href="https://github.com/b3atr1z14" target="_blank">b3atr1z14</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Criado por Beatriz Carvalho Silva. Saiba mais sobre a série no site oficial <a href="https://www.rustylake.com/" target="_blank">Rusty Lake</a>.</p>
+    </footer>
+</body>
+</html>

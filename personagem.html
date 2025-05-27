@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personagem Principal - Cube Escape</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #0d0d0d;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 3px solid #6a0505;
+        }
+
+        header h1 {
+            font-family: 'Creepster', cursive;
+            color: #d11e1e;
+            font-size: 3.5em;
+            margin: 0;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #ffc107;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #6a0505;
+            color: #ffffff;
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            margin-top: 40px;
+            border: 2px solid #6a0505;
+        }
+
+        main h2 {
+            font-family: 'Creepster', cursive;
+            color: #d11e1e;
+            font-size: 2.8em;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .character-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .character-info img {
+            max-width: 100%;
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            border: 3px solid #ffc107;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .character-info img:hover {
+            transform: scale(1.05); /* Leve zoom ao passar o mouse */
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .character-info p {
+            font-size: 1.1em;
+            color: #c0c0c0;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para a nova seção de fatos chave */
+        .key-facts {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #1f1f1f;
+            border-radius: 8px;
+            border: 1px solid #444;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .key-facts h3 {
+            color: #ffc107;
+            font-family: 'Creepster', cursive;
+            font-size: 1.8em;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .key-facts ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .key-facts li {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            border-left: 3px solid #d11e1e;
+            padding-left: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .key-facts li i {
+            color: #ffc107;
+            font-size: 1.2em;
+            margin-top: 2px;
+        }
+
+        /* Estilos para a seção "Sobre o Desenvolvedor" */
+        .developer-info {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #222;
+            border-radius: 10px;
+            margin: 60px auto;
+            max-width: 800px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            border: 2px solid #6a0505;
+        }
+
+        .developer-info h2 {
+            color: #d11e1e;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-family: 'Creepster', cursive;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .developer-info p {
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .developer-info a {
+            color: #ffc107;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .developer-info a:hover {
+            color: #d11e1e;
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #0d0d0d;
+            color: #888;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            border-top: 3px solid #6a0505;
+        }
+
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                padding: 10px;
+            }
+
+            main {
+                padding: 20px 15px;
+                margin-top: 20px;
+            }
+
+            main h2 {
+                font-size: 2.2em;
+            }
+
+            .character-info img {
+                width: 250px;
+            }
+
+            .key-facts h3 {
+                font-size: 1.5em;
+            }
+
+            .developer-info h2 {
+                font-size: 1.8em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            main h2 {
+                font-size: 1.8em;
+            }
+
+            .character-info img {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cube Escape</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="personagem.html">Personagem</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>O Enigmático Detetive: Dale Vandermeer</h2>
+        <div class="character-info">
+            <img src=  cu.webp "Imagem do Personagem Dale Vandermeer">
+            <p>O detetive Dale Vandermeer é o protagonista central e a mente perturbada por trás da maioria dos jogos da série Cube Escape e do universo Rusty Lake. Sua jornada começa de forma misteriosa, investigando um assassinato que o arrasta para um labirinto surreal de memórias distorcidas, eventos traumáticos e a estranha influência da família Vanderboom e da organização Rusty Lake.</p>
+            <p>Ao longo dos jogos, Dale é forçado a reviver momentos cruciais de seu passado, muitas vezes manipulado por forças cósmicas desconhecidas. Suas memórias se manifestam como cubos, cada um contendo um fragmento de sua psique fragmentada e do mistério maior que ele busca desesperadamente desvendar. Ele é uma figura atormentada, cuja busca incessante por respostas o leva a confrontar a loucura, a morte e a própria natureza da realidade repetidamente.</p>
+            <p>Suas únicas ferramentas são sua capacidade de observação aguçada e raciocínio lógico implacável, essenciais para desvendar os complexos e bizarros quebra-cabeças que se apresentam em seu caminho. A evolução de Dale na série é uma exploração profunda da psique humana e dos impactos duradouros do trauma, tornando-o um dos personagens mais enigmáticos, cativantes e memoráveis de todo o universo dos jogos de mistério.</p>
+        </div>
+
+        <section class="key-facts">
+            <h3>Fatos Chave Sobre Dale</h3>
+            <ul>
+                <li><i class="fas fa-user-secret"></i> Profissão: Detetive, em busca de respostas.</li>
+                <li><i class="fas fa-cube"></i> Trauma: Suas memórias são fragmentadas em cubos.</li>
+                <li><i class="fas fa-theater-mask"></i> Inimigos: A influência da família Vanderboom e entidades de Rusty Lake.</li>
+                <li><i class="fas fa-hourglass-half"></i> Jornada: Uma busca contínua pela verdade em meio à loucura e morte.</li>
+                <li><i class="fas fa-lightbulb"></i> Habilidades: Observação aguçada e lógica impecável para resolver puzzles.</li>
+            </ul>
+        </section>
+
+        <section class="developer-info">
+            <h2>Conheça a Criadora Desta Experiência</h2>
+            <p>Esta página foi desenvolvida com dedicação e paixão por Beatriz Carvalho Silva. Meu objetivo é compartilhar o fascínio pelo universo de Cube Escape e Rusty Lake, proporcionando aos fãs (e futuros fãs!) um ponto de partida para essa jornada intrigante.</p>
+            <p>Para mais informações ou para entrar em contato, visite meu GitHub: <a href="https://github.com/b3atr1z14" target="_blank">b3atr1z14</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Criado por Beatriz Carvalho Silva. Saiba mais sobre a série <a href="https://www.rustylake.com/" target="_blank">Rusty Lake</a>.</p>
+    </footer>
+</body>
+</html>
